@@ -12,6 +12,8 @@ class AddUserBloc extends Bloc<AddUserEvent, AddUserState> {
         await addUserRequest(event.name, event.jobName);
         emit(AddUserLoadedState());
         print('Loaded User Emitted');
+        print(event.name);
+        print(event.jobName);
       } catch (error) {
         emit(AddUserErrorState(error.toString()));
       }
